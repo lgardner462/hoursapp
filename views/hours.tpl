@@ -104,7 +104,7 @@ indexCounter = len(DATA.records)
 
 	<div class="row">
 	<div class="col-md-10">
-	<div class="records">
+	<div class="records" id="inputform">
 		
 		<div class="panel-group" id="accordion">
 			

@@ -28,7 +28,7 @@
 - CentOS version : `cat /etc/redhat-release`
 - **CentOS 7** :
     - make sure wget is installed : `rpm -qa wget` ? : `sudo yum install wget`
-    - get the installer file : `wget https://raw.githubusercontent.com/TechSquareInc/installers/master/hoursapp/centos7-hoursapp-installer.sh ; chmod +x centos7-hoursapp-installer.sh`
+    - get the installer file : `wget https://raw.githubusercontent.com/zamalchi/installers/master/hoursapp/centos7-hoursapp-installer.sh ; chmod +x centos7-hoursapp-installer.sh`
     - run : `./centos7-hoursapp-installer.sh ~/path/to/install` (example path: `~/apps/hours`)
 - **CentOS 6.8** (wip) :
     - run : `sudo yum install epel-release`
@@ -94,7 +94,7 @@
 - secondary method of storing hours
 - not necessary in order to use the app
 - requires : `sshuttle` to be connecting to the remote host
-- requires : an instance of the companion [crypto app](https://github.com/TechSquareInc/crypto-app) on the remote host
+- requires : an instance of the companion [crypto app](https://github.com/zamalchi/crypto-app) on the remote host
 - sources file : `config/crypto` for keys to use in encrypting and decrypting records
     - the file must contains two lines ; each of which must have a 16-character key
     - the keys must match the ones you use in the crypto app on the remote host

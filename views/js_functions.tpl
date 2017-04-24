@@ -39,7 +39,7 @@ $( document ).ready(function() {
 	if (msg != "") { alert(msg); }
 
 	// 4) prevents old values from being retained
-	document.getElementById("emailConfirm").value = "false";
+//	document.getElementById("emailConfirm").value = "false";
 	document.getElementById("sendConfirm").value = "false";
 
 	// 5) focuses one of the elements in the collapsing record form that was opened
@@ -52,6 +52,106 @@ $( document ).ready(function() {
 });
 
 // ####################################################################################################
+
+Date.prototype.yyyymmdd = function() {
+  var mm = this.getMonth() + 1; // getMonth() is zero-based
+  var dd = this.getDate();
+
+  return [this.getFullYear(),
+          (mm>9 ? '' : '0') + mm,
+          (dd>9 ? '' : '0') + dd
+         ].join('');
+};
+
+
+
+function createCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function eraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+function lockRecord(){
+
+    var str1 = "locked-";
+    var str2 = readCookie("hours-app-date");
+    var cookiename = str1.concat(str2);
+    var iscookie = readCookie( cookiename );
+
+    if ( iscookie ) {
+        eraseCookie(cookiename);
+        var printlock = document.getElementById("printlock");
+        printlock.style.display= 'none';
+        var nodes = document.getElementById("inputform").getElementsByTagName('*');
+        for(var i = 0; i < nodes.length; i++){
+            nodes[i].disabled = false;
+        }  
+    }
+    else{
+        createCookie( cookiename,"locked" , 30);
+        var printlock = document.getElementById("printlock");
+        printlock.style.display= 'inline-block';
+        var nodes = document.getElementById("inputform").getElementsByTagName('*');
+        for(var i = 0; i < nodes.length; i++){
+            nodes[i].disabled = true;
+
+
+        }  
+
+    }
+}
+
+function checkLock(){
+    var str1 = "locked-";
+    var str2 = readCookie("hours-app-date");
+    var cookiename = str1.concat(str2);
+    var iscookie = readCookie( cookiename );
+    if ( iscookie ) {
+        var printlock = document.getElementById("printlock");
+        printlock.style.display= 'inline-block';
+        var nodes = document.getElementById("inputform").getElementsByTagName('*');
+        for(var i = 0; i < nodes.length; i++){
+            nodes[i].disabled = true;
+    }
+    //     for (var i = 0; i <= 60; i++){
+      //       var stringy = "end" + i.toString();
+        //    try{
+          //       doc = document.getElementById(stringy);
+            //     doc.setAttribute("disabled",true);
+          
+         // }        
+          //  catch(err){
+     
+    //      }
+  //   }  
+ }
+
+            
+}
+
+
+
+
 // ####################################################################################################
 
 function confirmDelete() {
@@ -97,6 +197,8 @@ function focusAndClearField(id) {
 function adjustNextIndex(insertID, recordIndex) {
 	document.getElementById(insertID).value = recordIndex;
 }
+// #####
+
 
 // ####################################################################################################
 // ####################################################################################################

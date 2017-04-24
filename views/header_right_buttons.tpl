@@ -15,7 +15,7 @@
 
 	<!-- DELETE RECORDS -->
 	<form action="/delete" method="post" class="inline-block button-wrapper" enctype="multipart/form-data">						
-		<div class="form-group full-width">
+		<div class="form-group half-width">
 			
 			<input id="delete" name="delete" type="submit" value="Delete" class="control-button btn btn-danger btn-sm"
 				onclick="confirmDelete()" />
@@ -24,15 +24,11 @@
 		</div>
 	</form>
 
-	<!-- SEND RECORDS -->
-	<form action="/email" method="post" class="inline-block button-wrapper" enctype="multipart/form-data">
-		<div class="form-group full-width">						
-			
-			<input id="email" name="email" type="submit" value="Email" class="control-button btn btn-success btn-sm"
-				onclick="confirmEmail(this)" data-sender="{{DATA.SENDER}}" data-receivers="{{DATA.RECEIVERS}}" />
-			
-			<input id="emailConfirm" name="emailConfirm" type="hidden" value="false" />
-		</div>
-	</form>
+
+       <!-- LOCK BUTTON TESTING -->   
+      <div class="inline-block form-group button-wrapper">
+            <input id="lock" name="lock" type="submit" value="Lock/Unlock" class="control-button btn btn-success btn-sm"        
+                onclick="lockRecord()" \> 
+        </div>
 
 </div>

@@ -7,6 +7,8 @@ name : required, uses existing cookie for the default value
 date : not required, but defaults internally to the current date
 """
 %>
+
+<body onload="checkLock()">
 <form action="/pull" method="post" enctype="multipart/form-data">
 	
 	<div name="inputs">
@@ -27,7 +29,7 @@ date : not required, but defaults internally to the current date
 
 		<button type="submit" class="btn btn-primary btn-sm control-button day-shift" onclick="shiftDay(-1);">
 			<span class="glyphicon glyphicon-chevron-left left"></span>
-		</button>
+        </button>
 
 		<button type="submit" class="btn btn-primary btn-sm control-button">
 			Pull records
@@ -40,3 +42,4 @@ date : not required, but defaults internally to the current date
 	</div>
 
 </form>
+</body>

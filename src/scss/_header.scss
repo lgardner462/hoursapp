@@ -39,7 +39,6 @@ div#header {
 
 		div[name="right"] {
 			display: inline-block;
-			width: 59%;
 			min-width: 310px;
 		}
 
@@ -50,9 +49,8 @@ div#header {
 
 	// CONTROLS : inputs and buttons
 	div#controls {
-
 		vertical-align: center;
-
+        
 // ###########################################
 
 		div[name="left"] {
@@ -82,11 +80,12 @@ div#header {
 				// ######
 				div.btn-group[name="submit"] {
 					display: inline-block;
-					width: 33.5%;
+					width: 20px;
 
 					button {
 						width: 55%;
-						min-width: 80px;
+						min-width: 30px;
+                        max-width: 50px;
 						padding-left: 0px;
 						padding-right: 0px;
 					}
@@ -105,20 +104,22 @@ div#header {
 		div[name="right"] {
 			.form-control,
 			.control-button {
-				width: 100%;
+                width=40%
+				max-width: 100px;
 			}
 
 			.btn-group {
 				display: inline-block;
-				width: 100%;
-				min-width: 415px;
+				width: 40%;
+				min-width: 240px;
 			}
 
 			.button-wrapper,
 			.input-wrapper {
 				display: inline-block;
 				width: 24%;
-				min-width: 88px;
+				min-width: 5%;
+                max-width: 75%;
 			}
 		}
 		// input#setName {

@@ -9,9 +9,10 @@ import modu.recorder as recorder
 	<div class="row">
 	<div class="col-md-12">
 		<div class="panel panel-default">
-
-
 			<div class="panel-heading" id="titles">
+            <div style="display:none" id="printlock" >
+                     <h5 style="color:red">LOCKED</h5>
+            </div>
 				<div class="container-fluid">
 				<div class="row">
 				<div class="col-md-12">
@@ -30,7 +31,6 @@ import modu.recorder as recorder
 								Subtotal [Today]: <strong>{{DATA.subtotal}}</strong> [{{DATA.month}}]: <strong>{{DATA.total}}</strong>
 						</h3>
 					</div>
-
 				</div>
 				</div>
 				</div>

@@ -135,8 +135,8 @@ div#header {
     div#header div#controls div[name="right"] .button-wrapper,
     div#header div#controls div[name="right"] .input-wrapper {
       display: inline-block;
-      width: 24%;
-      min-width: 88px; }
+      width: 19%;
+      min-width: 65px; }
     div#header div#controls [name="updates"] {
       background-color: #cccccc; }
     div#header div#controls input#email {
